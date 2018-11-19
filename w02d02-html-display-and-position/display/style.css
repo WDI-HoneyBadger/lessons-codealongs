@@ -1,0 +1,160 @@
+body {
+/*   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdKwI4QjjOSxO8ifUOqSkwkvmYHeIsGCGgboKE1VQXnePbhZ5e");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  margin: 0;
+  margin-top: 50px;
+  background-color: bisque;
+  padding: 0px 5%;
+}d
+
+h1 {
+  color: firebrick;
+  text-align: center;
+}
+
+/* img {
+  /* height: 100%; */
+  width: 60%;
+} */
+
+.image-desc {
+  width: 120px;
+}
+
+.nav {
+  background-color: rgba(135,206,235, 1);
+  width: 100vw;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  text-align: center;
+}
+
+.nav-wrapper {
+  margin: 0 auto;
+}
+
+.nav > div {
+  display: inline-block;
+  background-color: rgb(177, 220, 237);
+  height: 100%;
+  width: 100px;
+  margin-left: -4px;
+}
+
+.nav > div > a {
+  text-decoration: none;
+}
+
+.nav > div:hover {
+  background-color: rgba(135,206,235, 1);
+}
+
+
+.nav > div:first-child {
+  margin-left: 0px;
+}
+
+.profile {
+  background-color: navy;
+}
+
+#first-profile {
+  color: antiquewhite;
+}
+
+.container {
+  background-color: #ededed;
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+}
+
+.project-cont {
+  height: 400px;
+  width: 100%;
+  border: 4px solid lightcyan;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.project2 {
+  border-color: rebeccapurple;
+}
+
+.project-cont:nth-child(4) {
+  border-color: royalblue;
+}
+
+.project-cont:last-child {
+  border-color: darkolivegreen;
+}
+
+.project1 > div {
+  height: 100px;
+  width: 100px;
+  background-color: indigo;
+}
+
+.project1 > .description {
+  position: relative;
+  background-color: rebeccapurple;
+  right: 20px;
+  bottom: 50px;
+}
+
+.project1 > .credits {
+  position: relative;
+  left: 300px;
+}
+
+.project2 > div {
+  height: 100px;
+  width: 100px;
+  background-color: blueviolet;
+}
+
+.project2 {
+  position: relative;
+}
+
+.project2 > .description {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* .image-desc {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+} */
+
+.project3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-desc {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 30%;
+  height: 100%;
+  background-color: white;
+}
+
+.image-desc > p {
+  width: 100%;
+}
+
+img {
+  /* width: 70%; */
+  height: 100%;
+}
