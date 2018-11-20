@@ -6,15 +6,19 @@ body {
   margin-top: 50px;
   background-color: bisque;
   padding: 0px 5%;
-}d
+}
 
 h1 {
   color: firebrick;
   text-align: center;
 }
 
+.smaller-img {
+  height: 50px;
+}
+
 /* img {
-  /* height: 100%; */
+  height: 100%;
   width: 60%;
 } */
 
