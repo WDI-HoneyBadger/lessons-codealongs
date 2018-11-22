@@ -104,4 +104,10 @@ function capitalizeAndAppend(){
 
 button.addEventListener('click', capitalizeAndAppend);
 
+/* var n=6;
 
+function multy(number){
+  console.log(number * 2);
+}
+
+multy(n); */
