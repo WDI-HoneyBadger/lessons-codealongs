@@ -11,12 +11,17 @@ router.get('/', function(request,response){
   // still needs to be set up
 })
 
-router.get('/:fruit', function (request, response) {
-  var fruitName = request.params.fruit;
+router.get('/:asdfasdfasd', function (request, response) {
+  var fruitName = request.params.asdfasdfasd;
+  console.log(request.params)
+  // console.log(fruitName);
   var fruit = fruits[fruitName];
+  // var fruit = fruits['lime']
+  // var fruit = fruits.lime.price
   var mustacheVariables = {
     name: fruitName,
-    price: fruit.price
+    price: fruit.price,
+    animal: 'fox'
   }
 
   response.render('./fruits/show', mustacheVariables);
