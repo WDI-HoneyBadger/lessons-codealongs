@@ -18,13 +18,31 @@ class Animal {
   }
 }
 
-const snake = new Animal('snake', 'stuart', 8);
-console.log(snake);
-snake.changeName('stu');
-console.log(snake);
+
+class Dog extends Animal {
+  constructor(name, age, owner, playsFrisbee) {
+    super('dog', name, age);
+    /* new Animal(species, name, age) */
+    this.owner = owner;
+    this.playsFrisbee = playsFrisbee
+  }
+  sayOwner(){
+    return `my owner is ${this.owner}`;
+  }
+}
+
+const rosco = new Dog('Rosco', 7, 'Jackie', false);
+console.log(rosco.sayName());
+console.log(rosco);
+
+
+
+
+// const snake = new Animal('snake', 'stuart', 8);
 // console.log(snake);
-
-
+// snake.changeName('stu');
+// console.log(snake);
+// // console.log(snake);
 // const deer = new Animal('deer', 'Ghadeer', 15);
 
 
