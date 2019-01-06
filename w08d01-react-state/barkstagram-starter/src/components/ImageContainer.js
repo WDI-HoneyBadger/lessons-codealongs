@@ -6,7 +6,11 @@ class ImageContainer extends Component {
   renderImages(arr) {
     const images = arr.map((image, index) => {
       return ( 
-        <div key={index} onMouseOver={ () => {this.props.updateDisplay(index)} }>
+        <div 
+          key={index} 
+          onMouseOver={ () => { this.props.updateDisplay(index) } }
+          onDoubleClick={ () => { this.props.addLikedImage(image.title) } }
+          >
           <Image source={image.source} title={image.title}/>
         </div>
       )

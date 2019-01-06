@@ -5,7 +5,7 @@ class LikedPics extends Component {
   render() {
     return (
       <div id="likedpics">
-        <p> LikedPics </p>
+        <p> {this.props.likedImages}</p>
       </div>
     );
   }
