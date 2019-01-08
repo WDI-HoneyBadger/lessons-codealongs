@@ -13,6 +13,9 @@ class RandomQuote extends Component {
       .then( response => response.json())
       .then( data => {
         console.log(data)
+        this.setState({
+          advice: data.slip.advice
+        })
       })
       .catch( error => {
         console.log(error)
@@ -21,8 +24,8 @@ class RandomQuote extends Component {
   // your methods
   render(){
     return(
-      <div>
-        RandomQuote placeholder
+      <div className="randomQuote">
+        <p>{this.state.advice}</p>
       </div>
     )
   }
