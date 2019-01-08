@@ -10,10 +10,20 @@ class App extends Component {
       activeComponent: 'random'
     }
   }
+  toggleActiveComponent(){
+    this.state.activeComponent === 'random' ? 
+      this.setState({activeComponent : 'search'}) :
+      this.setState({activeComponent: 'random'})
+  }
   render() {
     return (
       <div className="app">
-
+        <button className="toggle-btn" onClick={this.toggleActiveComponent.bind(this)}>
+          {this.state.activeComponent === 'random' ? 'search' : 'random'}
+        </button>
+        {this.state.activeComponent === 'random' ? 
+          <RandomQuote/> : 
+          <Search/>}
       </div>
     );
   }
