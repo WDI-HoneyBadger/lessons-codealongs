@@ -2,9 +2,9 @@ import React from 'react';
 
 const Tile = (props) => {
   return(
-    <div className="tile">
-      <img src={props.image} alt=""/>
-      <h2>{props.name}</h2>
+    <div className="tile" onClick={() => {props.setCurrentShow(props.show)}}>
+      <img src={props.show.image} alt=""/>
+      <h2>{props.show.name}</h2>
     </div>
   )
 }
