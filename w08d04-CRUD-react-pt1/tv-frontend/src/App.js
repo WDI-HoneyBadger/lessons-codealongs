@@ -3,6 +3,7 @@ import './App.css';
 import Tile from './components/Tile';
 import ShowForm from './components/ShowForm';
 import Show from './components/Show';
+import Search from './components/Search';
 
 class App extends Component {
   constructor(){
@@ -143,55 +144,55 @@ class App extends Component {
   }
 
   toggleModal(){
-    console.log('toggle modal');
-
     this.setState({
       modal: !this.state.modal
     })
   }
 
+  toggleSearch(){
+    this.setState({
+      search: !this.state.search
+    })
+  }
+
   renderContent(){
-    /* 
-      if we should render show, render the show, don't render the new button
-
-      else if we should render the search, render search
-
-      else render all
-    */
-
-    // if(this.state.search){
-    //   return <Search/>
-    // } else if
+    if(this.state.search){
+      return <Search toggleSearch={this.toggleSearch.bind(this)}/>
+    } else if (this.state.activeShow){
+      return (
+        <Show 
+         setCurrentShow={this.setCurrentShow.bind(this)} 
+         activeShow={this.state.activeShow}
+         deleteShow={this.deleteShow.bind(this)}
+         toggleModal={this.toggleModal.bind(this)}
+       />
+      )
+    } else {
+      return (
+        <div className="shows">
+          <div className="action-buttons">
+            <div onClick={this.toggleSearch.bind(this)}>
+              <img src="https://i.imgur.com/WX7bym4.png" alt=""/>
+            </div>
+            <div onClick={this.toggleModal.bind(this)}>+</div>
+          </div>
+          {this.renderTiles(this.state.shows)}
+        </div>
+      )
+    }
   }
 
   render() {
     return (
       <div>
         <header>My Shows</header>
-        {!this.state.activeShow ?
-          <div className="action-buttons">
-            <div onClick={this.toggleModal.bind(this)}>+</div>
-          </div> : ''}
+        {this.renderContent()}
         {this.state.modal ? 
           <ShowForm 
             handleSubmit={this.handleSubmit.bind(this)} 
             toggleModal={this.toggleModal.bind(this)}
             activeShow={this.state.activeShow}
-            /> : 
-        ''}
-        <div className="shows">
-        {/* if this.state.currentShow has value
-          render the show component that in there
-        */}
-          {this.state.activeShow ? 
-            <Show 
-              setCurrentShow={this.setCurrentShow.bind(this)} 
-              activeShow={this.state.activeShow}
-              deleteShow={this.deleteShow.bind(this)}
-              toggleModal={this.toggleModal.bind(this)}
-            /> : 
-            this.renderTiles(this.state.shows)}
-        </div>
+            /> : ''}
       </div>
     );
   }
