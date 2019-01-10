@@ -10,7 +10,8 @@ class App extends Component {
     this.state = {
       shows: [],
       activeShow: null,
-      modal: false
+      modal: false,
+      search: false
     }
   } 
 
@@ -54,6 +55,7 @@ class App extends Component {
        console.log(updatedShows)
        this.setState({
          shows: updatedShows,
+         activeShow: data,
          modal: false
        })
      })
@@ -146,6 +148,20 @@ class App extends Component {
     this.setState({
       modal: !this.state.modal
     })
+  }
+
+  renderContent(){
+    /* 
+      if we should render show, render the show, don't render the new button
+
+      else if we should render the search, render search
+
+      else render all
+    */
+
+    // if(this.state.search){
+    //   return <Search/>
+    // } else if
   }
 
   render() {
