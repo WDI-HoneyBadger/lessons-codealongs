@@ -109,7 +109,10 @@ class App extends Component {
           render the show component that in there
         */}
           {this.state.activeShow ? 
-            <Show setCurrentShow={this.setCurrentShow.bind(this)}/> : 
+            <Show 
+              setCurrentShow={this.setCurrentShow.bind(this)} 
+              activeShow={this.state.activeShow}
+            /> : 
             this.renderTiles(this.state.shows)}
         </div>
       </div>
