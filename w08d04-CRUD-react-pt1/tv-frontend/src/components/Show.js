@@ -23,7 +23,7 @@ const Show = props => {
               <p>{props.activeShow.description}</p>
               <div className="show-buttons">
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => {props.deleteShow(props.activeShow.id)}}>Delete</button>
               </div>
             </div>
           </div>

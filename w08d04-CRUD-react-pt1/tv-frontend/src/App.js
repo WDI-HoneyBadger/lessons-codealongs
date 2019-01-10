@@ -62,6 +62,24 @@ class App extends Component {
      })
   }
 
+  deleteShow(id) {
+    const url = `http://localhost:3000/shows/${id}`;
+    fetch(url, {
+        method: 'DELETE'
+      })
+      .then(response => response.json())
+      .then(data => {
+        const updatedShows = this.state.shows.filter( show => show.id !== id)
+        this.setState({
+          shows: updatedShows,
+          activeShow: null
+        })
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
   renderTiles(allShows) {
     // map through the state "shows" 
     // and make a tile for each TV show
@@ -112,6 +130,7 @@ class App extends Component {
             <Show 
               setCurrentShow={this.setCurrentShow.bind(this)} 
               activeShow={this.state.activeShow}
+              deleteShow={this.deleteShow.bind(this)}
             /> : 
             this.renderTiles(this.state.shows)}
         </div>
