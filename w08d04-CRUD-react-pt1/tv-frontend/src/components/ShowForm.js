@@ -30,8 +30,9 @@ class ShowForm extends Component {
   
   render(){
     return(
-      <div>
-        <form onSubmit={this.handleSubmit.bind(this)}>
+      <div className="modal">
+        <form className="show-form" onSubmit={this.handleSubmit.bind(this)}>
+          <div className="close-modal" onClick={()=>{this.props.toggleModal()}}>x</div>
           <label>name:</label><input type="text" name="name" onChange={this.handleChange.bind(this)}/><br/>
           <label>description:</label><input type="text" name="description" onChange={this.handleChange.bind(this)}/><br/>
           <label>image:</label><input type="text" name="image" onChange={this.handleChange.bind(this)}/><br/>

@@ -2,7 +2,10 @@ import React from 'react';
 
 const Show = (props) => {
   return(
-    <div>Show placeholder</div>
+  
+    <div>
+      <div className="back" onClick={() => {props.setCurrentShow(null)}}>back</div>
+    </div>
   )
 }
 

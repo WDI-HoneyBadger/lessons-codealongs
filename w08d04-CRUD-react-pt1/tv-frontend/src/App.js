@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Tile from './components/Tile';
 import ShowForm from './components/ShowForm';
+import Show from './components/Show';
 
 class App extends Component {
   constructor(){
@@ -37,7 +38,6 @@ class App extends Component {
 
       add that data to the 'shows' state
     */
-   console.log('updating show');
    const url = 'http://localhost:3000/shows'
    fetch(url, {
        method: 'POST',
@@ -53,7 +53,8 @@ class App extends Component {
        const updatedShows = this.state.shows.concat([data]);
        console.log(updatedShows)
        this.setState({
-         shows: updatedShows
+         shows: updatedShows,
+         modal: false
        })
      })
      .catch(error => {
@@ -76,6 +77,7 @@ class App extends Component {
   }
 
   setCurrentShow(show) {
+    console.log('setting show');
     console.log(show);
     this.setState({
       activeShow: show
@@ -95,13 +97,20 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.toggleModal.bind(this)}>add new show</button>
-        {this.state.modal ? <ShowForm createNewShow={this.createNewShow.bind(this)}/> : ''}
+        <header>My Shows</header>
+        <div className="action-buttons">
+          <div onClick={this.toggleModal.bind(this)}>+</div>
+        </div>
+        {this.state.modal ? 
+          <ShowForm createNewShow={this.createNewShow.bind(this)} toggleModal={this.toggleModal.bind(this)}/> : 
+        ''}
         <div className="shows">
         {/* if this.state.currentShow has value
           render the show component that in there
         */}
-          {this.renderTiles(this.state.shows)}
+          {this.state.activeShow ? 
+            <Show setCurrentShow={this.setCurrentShow.bind(this)}/> : 
+            this.renderTiles(this.state.shows)}
         </div>
       </div>
     );
