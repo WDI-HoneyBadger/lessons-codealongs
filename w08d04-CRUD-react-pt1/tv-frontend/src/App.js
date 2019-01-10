@@ -57,7 +57,8 @@ class App extends Component {
        this.setState({
          shows: updatedShows,
          activeShow: data,
-         modal: false
+         modal: false,
+         search: false
        })
      })
      .catch(error => {
@@ -157,7 +158,7 @@ class App extends Component {
 
   renderContent(){
     if(this.state.search){
-      return <Search toggleSearch={this.toggleSearch.bind(this)}/>
+      return <Search toggleSearch={this.toggleSearch.bind(this)} saveShow={this.createNewShow.bind(this)}/>
     } else if (this.state.activeShow){
       return (
         <Show 

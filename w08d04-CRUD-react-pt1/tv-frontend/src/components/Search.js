@@ -48,7 +48,7 @@ class Search extends Component {
 
   renderResults() {
     return this.state.results.map((result, index) => {
-      return <SearchResult key={index} show={result}/>
+      return <SearchResult key={index} show={result} saveShow={this.props.saveShow}/>
     })
   }
 

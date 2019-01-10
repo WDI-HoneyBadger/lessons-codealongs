@@ -11,7 +11,7 @@ const SearchResult = (props) => {
         <img src={props.show.image} alt=""/>
         <div className="result-details">
           <p>{props.show.description}</p>
-          <button>Save Show</button>
+          <button onClick={() => {props.saveShow(props.show)}}>Save Show</button>
         </div>
       </div>
     </div>
