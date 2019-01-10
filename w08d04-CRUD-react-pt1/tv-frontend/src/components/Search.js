@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import SearchResult from './SearchResult';
 
 class Search extends Component {
   constructor(){
     super();
     this.state = {
-      searchTerm: ''
+      searchTerm: '',
+      results: []
     }
   }
   handleChange(event) {
@@ -19,9 +21,14 @@ class Search extends Component {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        
+        console.log('data from api: ', data)
+        this.handleData(data)
+      })
+      .catch(error => {
+        console.log(error);
       })
   }
+
   handleData(data) {
     const parsedData = data.map( result => {
       return{
@@ -32,19 +39,29 @@ class Search extends Component {
       }
     })
 
+    console.log(parsedData);
+
     this.setState({
       results: parsedData
     })
   }
+
+  renderResults() {
+    return this.state.results.map((result, index) => {
+      return <SearchResult key={index} show={result}/>
+    })
+  }
+
   render() {
     return(
       <div>
         <div className="back" onClick={this.props.toggleSearch}>Back</div>
         <div className="search-container">
-          <form className="search">
-            <input type="text"/>
+          <form className="search" onSubmit={this.handleSubmit.bind(this)}>
+            <input type="text" onChange={this.handleChange.bind(this)}/>
             <button><img src="https://i.imgur.com/WX7bym4.png" alt=""/></button>
           </form>
+          {this.renderResults()}
         </div>
       </div>
     )
