@@ -62,6 +62,35 @@ class App extends Component {
      })
   }
 
+  updateShow(show) {
+    const url = `http://localhost:3000/shows/${show.id}`
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(show)
+    })
+    .then(response => response.json())
+    .then(data => {
+
+      const updatedShows = this.state.shows.map(el => {
+        return el.id === data.id ? data : el
+      })
+      console.log('current state: ', this.state.shows);
+      console.log('new state: ', updatedShows)
+
+      this.setState({
+        shows: updatedShows,
+        activeShow: show,
+        modal: false
+      })
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
+
   deleteShow(id) {
     const url = `http://localhost:3000/shows/${id}`;
     fetch(url, {
@@ -78,6 +107,14 @@ class App extends Component {
       .catch(error => {
         console.log(error);
       })
+  }
+
+  handleSubmit(show) {
+    if(this.state.activeShow) {
+      this.updateShow(show)
+    } else {
+      this.createNewShow(show)
+    }
   }
 
   renderTiles(allShows) {
@@ -107,7 +144,6 @@ class App extends Component {
     console.log('toggle modal');
 
     this.setState({
-      activeShow: null,
       modal: !this.state.modal
     })
   }
@@ -116,11 +152,16 @@ class App extends Component {
     return (
       <div>
         <header>My Shows</header>
-        <div className="action-buttons">
-          <div onClick={this.toggleModal.bind(this)}>+</div>
-        </div>
+        {!this.state.activeShow ?
+          <div className="action-buttons">
+            <div onClick={this.toggleModal.bind(this)}>+</div>
+          </div> : ''}
         {this.state.modal ? 
-          <ShowForm createNewShow={this.createNewShow.bind(this)} toggleModal={this.toggleModal.bind(this)}/> : 
+          <ShowForm 
+            handleSubmit={this.handleSubmit.bind(this)} 
+            toggleModal={this.toggleModal.bind(this)}
+            activeShow={this.state.activeShow}
+            /> : 
         ''}
         <div className="shows">
         {/* if this.state.currentShow has value
@@ -131,6 +172,7 @@ class App extends Component {
               setCurrentShow={this.setCurrentShow.bind(this)} 
               activeShow={this.state.activeShow}
               deleteShow={this.deleteShow.bind(this)}
+              toggleModal={this.toggleModal.bind(this)}
             /> : 
             this.renderTiles(this.state.shows)}
         </div>

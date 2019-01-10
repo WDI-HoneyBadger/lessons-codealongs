@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 
 class ShowForm extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
-      name: '',
-      image: '',
-      description: '',
-      rating: ''
+      name: props.activeShow ? props.activeShow.name : '',
+      image: props.activeShow ? props.activeShow.image : '',
+      description: props.activeShow ? props.activeShow.description : '',
+      rating: props.activeShow ? props.activeShow.rating : '',
+      id: props.activeShow ? props.activeShow.id : null
     }
   }
   handleChange(event){
@@ -25,7 +26,7 @@ class ShowForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createNewShow(this.state)
+    this.props.handleSubmit(this.state)
   }
   
   render(){
@@ -33,10 +34,10 @@ class ShowForm extends Component {
       <div className="modal">
         <form className="show-form" onSubmit={this.handleSubmit.bind(this)}>
           <div className="close-modal" onClick={()=>{this.props.toggleModal()}}>x</div>
-          <label>name:</label><input type="text" name="name" onChange={this.handleChange.bind(this)}/><br/>
-          <label>description:</label><input type="text" name="description" onChange={this.handleChange.bind(this)}/><br/>
-          <label>image:</label><input type="text" name="image" onChange={this.handleChange.bind(this)}/><br/>
-          <label>rating:</label><input type="number" name="rating" onChange={this.handleChange.bind(this)}/><br/>
+          <label>name:</label><input type="text" value={this.state.name} name="name" onChange={this.handleChange.bind(this)}/><br/>
+          <label>description:</label><input type="text" value={this.state.description} name="description" onChange={this.handleChange.bind(this)}/><br/>
+          <label>image:</label><input type="text" value={this.state.image}name="image" onChange={this.handleChange.bind(this)}/><br/>
+          <label>rating:</label><input type="number" value={this.state.rating}name="rating" onChange={this.handleChange.bind(this)}/><br/>
           <button>submit</button>
         </form>
       </div>

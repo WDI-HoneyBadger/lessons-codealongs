@@ -22,7 +22,7 @@ const Show = props => {
             <div className="show-details">
               <p>{props.activeShow.description}</p>
               <div className="show-buttons">
-                <button>Edit</button>
+                <button onClick={() => {props.toggleModal()}}>Edit</button>
                 <button onClick={() => {props.deleteShow(props.activeShow.id)}}>Delete</button>
               </div>
             </div>
