@@ -1,0 +1,6 @@
+<%= form_for @cup do |form|%>
+  Color: <%= form.text_field :color %>
+  Capacity: <%= form.number_field( :capacity, in: 1.0..20.0, step: 0.5)%>
+  Material: <%= form.text_field :material%>
+  <%= form.submit %>
+<%end%>

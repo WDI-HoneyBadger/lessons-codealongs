@@ -1,0 +1,13 @@
+<h1>Check out all these CUPS 🤩</h1>
+
+<p>Cups are realy cool, holding liquid is much easier with cups</p>
+
+<% @cups.each do |cup| %>
+  <div>
+    <p>A CUP</p>
+    <p>this cup is <%= cup.color %></p>
+    <p>it can hold <%= cup.capacity %> gallons</p>
+    <p>and is made from <%= cup.material %></p>
+    <p>check out this cup <%= link_to 'here', cup_path(cup) %></p>
+  </div>
+<% end %>

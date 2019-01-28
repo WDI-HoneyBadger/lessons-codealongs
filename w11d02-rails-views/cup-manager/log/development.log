@@ -1,0 +1,758 @@
+  [1m[35m (430.5ms)[0m  [1m[35mCREATE DATABASE "cup-manager_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (396.2ms)[0m  [1m[35mCREATE DATABASE "cup-manager_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1934236496447839290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCups (20190128081310)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "cups" ("id" bigserial primary key, "capacity" float, "color" character varying, "material" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190128081310_create_cups.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190128081310"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-28 08:13:44.844170"], ["updated_at", "2019-01-28 08:13:44.844170"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1934236496447839290)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trevorpreston/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCup Create (0.7ms)[0m  [1m[32mINSERT INTO "cups" ("capacity", "color", "material", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["capacity", 5.24], ["color", "purple"], ["material", "flesh"], ["created_at", "2019-01-28 08:17:30.404150"], ["updated_at", "2019-01-28 08:17:30.404150"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCup Create (0.2ms)[0m  [1m[32mINSERT INTO "cups" ("capacity", "color", "material", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["capacity", 7.0], ["color", "teal"], ["material", "ceramic"], ["created_at", "2019-01-28 08:17:30.406656"], ["updated_at", "2019-01-28 08:17:30.406656"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCup Create (0.2ms)[0m  [1m[32mINSERT INTO "cups" ("capacity", "color", "material", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["capacity", 4.77], ["color", "black"], ["material", "black matter"], ["created_at", "2019-01-28 08:17:30.408429"], ["updated_at", "2019-01-28 08:17:30.408429"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCup Create (0.2ms)[0m  [1m[32mINSERT INTO "cups" ("capacity", "color", "material", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["capacity", 2.5], ["color", "green"], ["material", "carbon fiber"], ["created_at", "2019-01-28 08:17:30.410123"], ["updated_at", "2019-01-28 08:17:30.410123"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2019-01-28 11:24:15 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trevorpreston/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/trevorpreston/.rvm/gems/ruby-2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/trevorpreston/.rvm/gems/ruby-2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (3.7ms)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 11:24:27 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  Rendered cups/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 530ms (Views: 528.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:24:41 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 11:24:50 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/new.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:31:38 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  Rendered cups/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:34:00 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  Rendered cups/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:34:10 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  Rendered cups/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:44:57 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.6ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 25ms (Views: 17.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 11:48:20 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:48:34 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:51:14 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 24ms (Views: 11.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/cups/3" for 127.0.0.1 at 2019-01-28 11:51:18 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/4" for 127.0.0.1 at 2019-01-28 11:51:22 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 11:51:25 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:51:38 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 11:57:00 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 11:57:02 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:57:34 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:58:32 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 11:58:34 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 11:58:35 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 11:58:36 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups/3" for 127.0.0.1 at 2019-01-28 11:58:38 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 11:58:39 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 11:59:30 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 12:06:27 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 11.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 12:06:30 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.5ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cups/4" for 127.0.0.1 at 2019-01-28 12:06:35 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 17ms (Views: 14.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/cups/4" for 127.0.0.1 at 2019-01-28 12:06:37 +0300
+  
+ActionController::RoutingError (No route matches [POST] "/cups/4"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/cups/4" for 127.0.0.1 at 2019-01-28 12:07:22 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/cups/4" for 127.0.0.1 at 2019-01-28 12:07:24 +0300
+Processing by CupsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K7utTlYzYtFwVKZYlRcg8vZgjlNugAVRon/fBZP6XrALfE2wZjgFu03DUxbi3yKgGZLpxZDDZp+pTpEBLutXZA==", "id"=>"4"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cups_controller.rb:17
+  [1m[36mCup Destroy (0.3ms)[0m  [1m[31mDELETE FROM "cups" WHERE "cups"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/cups_controller.rb:17
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cups_controller.rb:17
+Redirected to http://localhost:3000/cups
+Completed 302 Found in 4ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 12:07:24 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.5ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 12:14:28 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.2ms)
+  Rendered cups/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 12:15:17 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.2ms)
+  Rendered cups/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/edit" for 127.0.0.1 at 2019-01-28 12:15:21 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+Completed 404 Not Found in 15ms (ActiveRecord: 6.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Cup with 'id'=edit):
+  
+app/controllers/cups_controller.rb:7:in `show'
+Started GET "/cups/3/edit" for 127.0.0.1 at 2019-01-28 12:15:30 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.2ms)
+  Rendered cups/edit.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/3/edit" for 127.0.0.1 at 2019-01-28 12:17:56 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.2ms)
+  Rendered cups/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 12:18:00 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/" for 127.0.0.1 at 2019-01-28 12:20:05 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 23ms (Views: 22.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cups/1" for 127.0.0.1 at 2019-01-28 12:20:10 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 12:20:14 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 12:20:15 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cups" for 127.0.0.1 at 2019-01-28 12:20:18 +0300
+Processing by CupsController#index as HTML
+  Rendering cups/index.html.erb within layouts/application
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT "cups".* FROM "cups"[0m
+  ↳ app/views/cups/index.html.erb:5
+  Rendered cups/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:00:30 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.2ms)
+  Rendered cups/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:07:44 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.4ms)
+  Rendered cups/new.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 8.8ms)
+
+
+  
+SyntaxError (/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+  Capacity: '.freeze;@output_buffer.app...
+  ^~~~~~~~
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+  Material: '.freeze;@output_buffer.appe...
+          ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:5: syntax error, unexpected '>', expecting ')'
+>'.freeze;end;
+^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:9: unterminated string meets end of file
+          end
+              ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:9: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/cups/_form.html.erb:5: syntax error, unexpected '>', expecting ')'
+app/views/cups/_form.html.erb:9: unterminated string meets end of file
+app/views/cups/_form.html.erb:9: syntax error, unexpected end-of-input, expecting ')'
+app/views/cups/new.html.erb:3:in `_app_views_cups_new_html_erb___3307067186408421810_70256696596940'
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:07:57 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.5ms)
+  Rendered cups/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+  Capacity: '.freeze;@output_buffer.app...
+  ^~~~~~~~
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+  Material: '.freeze;@output_buffer.appe...
+          ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+>'.freeze;end;
+^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: unterminated string meets end of file
+          end
+              ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+app/views/cups/_form.html.erb:10: unterminated string meets end of file
+app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'
+app/views/cups/new.html.erb:3:in `_app_views_cups_new_html_erb___3307067186408421810_70256656450040'
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:08:56 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.4ms)
+  Rendered cups/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+  Capacity: '.freeze;@output_buffer.app...
+  ^~~~~~~~
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+  Material: '.freeze;@output_buffer.appe...
+          ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+>'.freeze;end;
+^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: unterminated string meets end of file
+          end
+              ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+app/views/cups/_form.html.erb:10: unterminated string meets end of file
+app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'
+app/views/cups/new.html.erb:3:in `_app_views_cups_new_html_erb___3307067186408421810_70256702592840'
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:08:57 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (0.4ms)
+  Rendered cups/new.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+  Capacity: '.freeze;@output_buffer.app...
+  ^~~~~~~~
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+  Material: '.freeze;@output_buffer.appe...
+          ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+>'.freeze;end;
+^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: unterminated string meets end of file
+          end
+              ^
+/Users/trevorpreston/code/wdi/lessons/w11d02-rails-views/cup-manager/app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/cups/_form.html.erb:3: syntax error, unexpected tCONSTANT, expecting end
+app/views/cups/_form.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/cups/_form.html.erb:6: syntax error, unexpected '>', expecting ')'
+app/views/cups/_form.html.erb:10: unterminated string meets end of file
+app/views/cups/_form.html.erb:10: syntax error, unexpected end-of-input, expecting ')'
+app/views/cups/new.html.erb:3:in `_app_views_cups_new_html_erb___3307067186408421810_70256634820140'
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:09:42 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (15.3ms)
+  Rendered cups/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:10:07 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.0ms)
+  Rendered cups/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:10:36 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.4ms)
+  Rendered cups/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cups/new" for 127.0.0.1 at 2019-01-28 14:18:51 +0300
+Processing by CupsController#new as HTML
+  Rendering cups/new.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.2ms)
+  Rendered cups/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 13.1ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/cups" for 127.0.0.1 at 2019-01-28 14:24:49 +0300
+Processing by CupsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ytfT5+IOGEh5bfaBshYrlitLYiZ0p2PTPHLcQsU0kGTqEDMZ0gV/IkT6A8/F3inExLkFsIrkAB03Q5JGeCWZsA==", "cup"=>{"color"=>"brown", "capacity"=>"4", "material"=>"dirt"}, "commit"=>"Create Cup"}
+Started GET "/cups/4/edit" for 127.0.0.1 at 2019-01-28 14:28:47 +0300
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cups_controller.rb:17
+  [1m[36mCup Create (0.5ms)[0m  [1m[32mINSERT INTO "cups" ("capacity", "color", "material", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["capacity", 4.0], ["color", "brown"], ["material", "dirt"], ["created_at", "2019-01-28 11:28:47.916495"], ["updated_at", "2019-01-28 11:28:47.916495"]]
+  ↳ app/controllers/cups_controller.rb:17
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cups_controller.rb:17
+Redirected to http://localhost:3000/cups/5
+Completed 302 Found in 238405ms (ActiveRecord: 6.8ms)
+
+
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.0ms)
+  Rendered cups/edit.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @cup do |form|%>
+    2:   Color: <%= form.text_field :color %>
+    3:   Capacity: <%= form.number_field( :capacity, in: 1.0..20.0, step: 0.5)%>
+    4:   Material: <%= form.text_field :material%>
+  
+app/views/cups/_form.html.erb:1:in `_app_views_cups__form_html_erb___1887079106534641965_70256702296600'
+app/views/cups/edit.html.erb:3:in `_app_views_cups_edit_html_erb__1704418184671295813_70256702264840'
+Started GET "/cups/4/edit" for 127.0.0.1 at 2019-01-28 14:28:57 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/trevorpreston/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (2.2ms)
+  Rendered cups/edit.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @cup do |form|%>
+    2:   Color: <%= form.text_field :color %>
+    3:   Capacity: <%= form.number_field( :capacity, in: 1.0..20.0, step: 0.5)%>
+    4:   Material: <%= form.text_field :material%>
+  
+app/views/cups/_form.html.erb:1:in `_app_views_cups__form_html_erb___935984533618314285_70362998498260'
+app/views/cups/edit.html.erb:3:in `_app_views_cups_edit_html_erb___4252488046295363689_70362998272640'
+Started GET "/cups/4/edit" for 127.0.0.1 at 2019-01-28 14:30:06 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCup Load (0.4ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:21
+Completed 404 Not Found in 14ms (ActiveRecord: 4.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Cup with 'id'=4):
+  
+app/controllers/cups_controller.rb:21:in `edit'
+Started GET "/cups/2/edit" for 127.0.0.1 at 2019-01-28 14:30:13 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:21
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (5.6ms)
+  Rendered cups/edit.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 202ms (Views: 194.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cups/2/edit" for 127.0.0.1 at 2019-01-28 14:33:56 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:21
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.4ms)
+  Rendered cups/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 14.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/cups/2/edit" for 127.0.0.1 at 2019-01-28 14:33:57 +0300
+Processing by CupsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.2ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:21
+  Rendering cups/edit.html.erb within layouts/application
+  Rendered cups/_form.html.erb (1.2ms)
+  Rendered cups/edit.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/cups/2" for 127.0.0.1 at 2019-01-28 14:34:06 +0300
+Processing by CupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9tjhw1lAqJ8O5SIabpVBgfoxCs/xZCfXNO65Sr3H2fzWHwE9aUvP9TNy11QZXUPTFcNtWQ8nRBk/3/dOANbQKA==", "cup"=>{"color"=>"teal", "capacity"=>"8", "material"=>"ceramic!!!"}, "commit"=>"Update Cup", "id"=>"2"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/cups_controller.rb:27
+  [1m[36mCup Update (0.5ms)[0m  [1m[33mUPDATE "cups" SET "capacity" = $1, "material" = $2, "updated_at" = $3 WHERE "cups"."id" = $4[0m  [["capacity", 8.0], ["material", "ceramic!!!"], ["updated_at", "2019-01-28 11:34:06.581836"], ["id", 2]]
+  ↳ app/controllers/cups_controller.rb:27
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/cups_controller.rb:27
+Redirected to http://localhost:3000/cups/2
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/cups/2" for 127.0.0.1 at 2019-01-28 14:34:06 +0300
+Processing by CupsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCup Load (0.3ms)[0m  [1m[34mSELECT  "cups".* FROM "cups" WHERE "cups"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cups_controller.rb:7
+  Rendering cups/show.html.erb within layouts/application
+  Rendered cups/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.3ms)
+
+
