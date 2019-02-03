@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  color: MyString
+  capacity: 1.5
+  material: MyString
+
+two:
+  color: MyString
+  capacity: 1.5
+  material: MyString

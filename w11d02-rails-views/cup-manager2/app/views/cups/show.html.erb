@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @cup.color %>
+</p>
+
+<p>
+  <strong>Capacity:</strong>
+  <%= @cup.capacity %>
+</p>
+
+<p>
+  <strong>Material:</strong>
+  <%= @cup.material %>
+</p>
+
+<%= link_to 'Edit', edit_cup_path(@cup) %> |
+<%= link_to 'Back', cups_path %>
